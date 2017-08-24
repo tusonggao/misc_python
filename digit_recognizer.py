@@ -71,7 +71,7 @@ if __name__=='__main__':
 #    outcome_data_frame.to_csv('./tsg_outcome.csv', index_label='PassengerId')
 #    end_time = time.time()    
 #    print('time cost is ', end_time - start_time)    
-#    sys.exit(0)
+
     
 #    cols_to_drop = ['Survived']
 
