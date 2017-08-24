@@ -56,7 +56,7 @@ if __name__=='__main__':
 #    
 #    dummy_majority = DummyClassifier(strategy='most_frequent').fit(X_train, y_train)
 #    pred_most_frequent = dummy_majority.predict(X_test)
-#    print("predicted labels: %s" % np.unique(pred_most_frequent))
+
     
     train_data_frame = pd.read_csv('./data/train.csv')
     test_data_frame = pd.read_csv('./data/test.csv')
