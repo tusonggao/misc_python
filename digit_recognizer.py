@@ -69,7 +69,7 @@ if __name__=='__main__':
 #                         {'Survived': [1 if x==True else 0 for x in guess_outcome]}, 
 #                         index=test_data_frame.index.values)
 #    outcome_data_frame.to_csv('./tsg_outcome.csv', index_label='PassengerId')
-#    end_time = time.time()    
+
 
     
 #    cols_to_drop = ['Survived']
