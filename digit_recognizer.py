@@ -71,8 +71,7 @@ if __name__=='__main__':
 #    outcome_data_frame.to_csv('./tsg_outcome.csv', index_label='PassengerId')
 
 
-    
-#    cols_to_drop = ['Survived']
+   
 
     X_train = train_data_frame.drop(['label'], axis=1)
     y_train = train_data_frame['label']
