@@ -65,10 +65,7 @@ if __name__=='__main__':
     
 #    guess_outcome = test_data_frame['Sex']=='female'
 #    print('test_data_frame sex value_counts \n', test_data_frame['Sex'].value_counts())    
-#    outcome_data_frame = pd.DataFrame(
-#                         {'Survived': [1 if x==True else 0 for x in guess_outcome]}, 
-#                         index=test_data_frame.index.values)
-#    outcome_data_frame.to_csv('./tsg_outcome.csv', index_label='PassengerId')
+
 
 
    
