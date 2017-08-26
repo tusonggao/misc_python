@@ -64,7 +64,7 @@ if __name__=='__main__':
     print('test_data_frame shape is ', test_data_frame.shape)
     
 #    guess_outcome = test_data_frame['Sex']=='female'
-#    print('test_data_frame sex value_counts \n', test_data_frame['Sex'].value_counts())    
+
 
 
 
