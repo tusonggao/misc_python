@@ -54,7 +54,6 @@ if __name__=='__main__':
 #    X_train, X_test, y_train, y_test = train_test_split(
 #                                digits.data, y, random_state=0)
 #    
-#    dummy_majority = DummyClassifier(strategy='most_frequent').fit(X_train, y_train)
 
     
     train_data_frame = pd.read_csv('./data/train.csv')
