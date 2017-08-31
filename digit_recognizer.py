@@ -123,7 +123,7 @@ if __name__=='__main__':
 #                               max_depth=4,
 #                               n_jobs=4).fit(
 #                               train_data_frame[train_cols],
-#                               train_data_frame['SalePrice'])
+
 
 ###########################################################################
 
