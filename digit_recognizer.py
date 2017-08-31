@@ -50,7 +50,6 @@ if __name__=='__main__':
 #    plt.gray()
 #    plt.matshow(digits.images[0])
 #    plt.show()
-#    y = digits.target == 9
 
     
     train_data_frame = pd.read_csv('./data/train.csv')
