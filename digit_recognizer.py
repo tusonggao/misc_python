@@ -123,7 +123,6 @@ if __name__=='__main__':
 #                               n_jobs=4).fit(
 #                               train_data_frame[train_cols],
 
-
 ###########################################################################
 
     gbc = GradientBoostingClassifier(n_estimators=2000,
