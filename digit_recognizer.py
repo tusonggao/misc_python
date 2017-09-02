@@ -75,7 +75,6 @@ if __name__=='__main__':
 #    print('features_data_frame is ', list(features_data_frame['Fare'])[295:307])
 #    print('test_dataframe.shape is ', test_data_frame.shape)
 
-
 #    features_data_frame = pd.get_dummies(features_data_frame)
 #    test_data_frame = pd.get_dummies(test_data_frame)
 #    adjust_test_dataframe(features_data_frame, train_data_frame)
