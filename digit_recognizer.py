@@ -58,7 +58,6 @@ if __name__=='__main__':
     print('train_data_frame shape is ', train_data_frame.shape)
     print('test_data_frame shape is ', test_data_frame.shape)  
 
-
    
 
     X_train = train_data_frame.drop(['label'], axis=1)
