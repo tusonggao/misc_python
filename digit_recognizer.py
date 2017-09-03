@@ -154,8 +154,7 @@ if __name__=='__main__':
 #    
 #    print('svr grid_search.best_params_ is ', grid_search.best_params_)
 #    print('svr grid_search.best_score_ is ', grid_search.best_score_)
-#    print('best score is ', test_score)
-    
+#    print('best score is ', test_score)    
 
 #    gbr = GradientBoostingClassifier(n_estimators=300, max_depth=2, 
 #                                     learning_rate=0.01,
