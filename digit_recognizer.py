@@ -65,7 +65,6 @@ if __name__=='__main__':
     X_test = test_data_frame    
 
     
-#    concated_dataframe = concated_dataframe.select_dtypes(include=['float', 'int']).copy()
 
 #    print('features_data_frame is ', list(features_data_frame.columns))
 #    print('features_data_frame is ', list(features_data_frame['Fare'])[295:307])
