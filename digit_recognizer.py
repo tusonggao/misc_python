@@ -81,7 +81,6 @@ if __name__=='__main__':
 #                                            train_data_frame['SalePrice'], 
 #                                            random_state=42)
             
-#    lr = LinearRegression().fit(X_train, y_train)
                                             
 #    best_ratio = 0
 #    best_score = -1000
