@@ -48,7 +48,6 @@ from sklearn.preprocessing import StandardScaler
 if __name__=='__main__':
 #    digits = load_digits()
 #    print('len of digits is ', len(digits.data))
-#    plt.gray()
 
     
     train_data_frame = pd.read_csv('./data/train.csv')
