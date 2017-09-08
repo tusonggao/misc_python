@@ -71,7 +71,6 @@ def main(_):
 
 
     #
-    # can be numerically unstable.
     #
     cross_entropy = tf.reduce_mean(
         tf.nn.softmax_cross_entropy_with_logits(labels=y_, logits=y))
