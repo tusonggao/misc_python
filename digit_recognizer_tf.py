@@ -69,9 +69,7 @@ def main(_):
     y_ = tf.placeholder(tf.float32, [None, 10])
     
 
-    #
-    #   tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(tf.nn.softmax(y)),
-    #                                 reduction_indices=[1]))
+
     #
     # can be numerically unstable.
     #
