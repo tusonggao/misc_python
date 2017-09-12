@@ -57,8 +57,7 @@ if __name__=='__main__':
 
     X_train = train_data_frame.drop(['label'], axis=1)
     y_train = train_data_frame['label']
-    X_test = test_data_frame    
-
+    X_test = test_data_frame  
     
 
 #    print('features_data_frame is ', list(features_data_frame.columns))
