@@ -99,6 +99,7 @@ if __name__=='__main__':
     
     print('hello world 222')
     sys.exit(0)
+    
 #    digits = load_digits()
 #    print('len of digits is ', len(digits.data))
 #    plt.gray()
