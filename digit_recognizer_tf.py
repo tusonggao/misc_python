@@ -148,6 +148,7 @@ if __name__=='__main__':
     
 #    features_cols = list(set(train_data_frame.columns)-set(['Survived']))
 
+
 #    print(data_dummies.dtypes)
 #    col_names = list(data_dummies.columns)
 #    train_cols = list(set(train_data_frame.columns)-
