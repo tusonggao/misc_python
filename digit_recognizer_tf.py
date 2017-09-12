@@ -66,8 +66,6 @@ def main(_):
     
     # Define loss and optimizer
     y_ = tf.placeholder(tf.float32, [None, 10])
-    
-
 
     #
     cross_entropy = tf.reduce_mean(
