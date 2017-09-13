@@ -85,7 +85,6 @@ def main(_):
     print(sess.run(accuracy, feed_dict={x: mnist.test.images,
                                           y_: mnist.test.labels}))
     
-
 if __name__=='__main__':
     print('hello world 111')
     
