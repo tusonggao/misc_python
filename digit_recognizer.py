@@ -60,7 +60,6 @@ if __name__=='__main__':
     y_train = train_data_frame['label']
     X_test = test_data_frame  
     
-
 #    print('features_data_frame is ', list(features_data_frame.columns))
 
 #    print('test_dataframe.shape is ', test_data_frame.shape)
