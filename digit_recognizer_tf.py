@@ -98,7 +98,7 @@ if __name__=='__main__':
     sys.exit(0)
     
 #    digits = load_digits()
-#    print('len of digits is ', len(digits.data))
+
 
 #    plt.matshow(digits.images[0])
 #    plt.show()
