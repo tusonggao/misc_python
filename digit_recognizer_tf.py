@@ -99,7 +99,7 @@ if __name__=='__main__':
     
 #    digits = load_digits()
 #    print('len of digits is ', len(digits.data))
-#    plt.gray()
+
 #    plt.matshow(digits.images[0])
 #    plt.show()
 #    y = digits.target == 9
