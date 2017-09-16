@@ -99,7 +99,6 @@ if __name__=='__main__':
     
 #    digits = load_digits()
 
-
 #    plt.matshow(digits.images[0])
 #    plt.show()
 #    y = digits.target == 9
