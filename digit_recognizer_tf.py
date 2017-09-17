@@ -97,6 +97,7 @@ if __name__=='__main__':
     print('hello world 222')
     sys.exit(0)
     
+    
 #    digits = load_digits()
 
 #    plt.matshow(digits.images[0])
