@@ -99,7 +99,7 @@ if __name__=='__main__':
     
 
 #    plt.show()
-#    y = digits.target == 9
+
 #    X_train, X_test, y_train, y_test = train_test_split(
 #                                digits.data, y, random_state=0)
 #    
