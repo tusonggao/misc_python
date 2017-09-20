@@ -96,8 +96,6 @@ if __name__=='__main__':
     print('hello world 222')
     sys.exit(0)
     
-
-
 #    X_train, X_test, y_train, y_test = train_test_split(
 #                                digits.data, y, random_state=0)
 #    
