@@ -97,9 +97,7 @@ if __name__=='__main__':
     sys.exit(0)
     
     
-#    digits = load_digits()
 
-#    plt.matshow(digits.images[0])
 #    plt.show()
 #    y = digits.target == 9
 #    X_train, X_test, y_train, y_test = train_test_split(
