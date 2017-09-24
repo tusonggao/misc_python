@@ -124,8 +124,7 @@ if __name__=='__main__':
     y_train = train_data_frame['label']
     X_test = test_data_frame
     
-#    concated_dataframe = pd.concat([features_data_frame, test_data_frame])
-    
+#    concated_dataframe = pd.concat([features_data_frame, test_data_frame])    
 #    concated_dataframe = concated_dataframe.select_dtypes(include=['float', 'int']).copy()
 
 #    print('features_data_frame is ', list(features_data_frame.columns))
