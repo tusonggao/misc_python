@@ -95,8 +95,7 @@ if __name__=='__main__':
     print('hello world 222')
     sys.exit(0)
     
-#    X_train, X_test, y_train, y_test = train_test_split(
-#                                digits.data, y, random_state=0)
+
 #    
 #    dummy_majority = DummyClassifier(strategy='most_frequent').fit(X_train, y_train)
 #    pred_most_frequent = dummy_majority.predict(X_test)
