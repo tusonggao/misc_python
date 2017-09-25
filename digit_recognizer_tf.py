@@ -96,8 +96,6 @@ if __name__=='__main__':
     sys.exit(0)
     
 
-
-#    pred_most_frequent = dummy_majority.predict(X_test)
 #    print("predicted labels: %s" % np.unique(pred_most_frequent))
 #    print("score: %f" % dummy_majority.score(X_test, y_test))
     
