@@ -97,7 +97,7 @@ if __name__=='__main__':
     
 
 
-#    print("score: %f" % dummy_majority.score(X_test, y_test))
+
     
     train_data_frame = pd.read_csv('./data/train.csv')
     test_data_frame = pd.read_csv('./data/test.csv')
