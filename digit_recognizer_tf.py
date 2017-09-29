@@ -96,7 +96,7 @@ if __name__=='__main__':
     sys.exit(0)
     
 
-#    print("predicted labels: %s" % np.unique(pred_most_frequent))
+
 #    print("score: %f" % dummy_majority.score(X_test, y_test))
     
     train_data_frame = pd.read_csv('./data/train.csv')
