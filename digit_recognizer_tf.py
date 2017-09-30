@@ -93,8 +93,7 @@ if __name__=='__main__':
     tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
     
     print('hello world 222')
-    sys.exit(0)
-    
+    sys.exit(0)    
 
 
     
