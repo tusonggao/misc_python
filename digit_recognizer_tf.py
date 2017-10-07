@@ -101,7 +101,6 @@ if __name__=='__main__':
     print('test_data_frame shape is ', test_data_frame.shape)
     
 
-#    outcome_data_frame = pd.DataFrame(
 #                         {'Survived': [1 if x==True else 0 for x in guess_outcome]}, 
 #                         index=test_data_frame.index.values)
 #    outcome_data_frame.to_csv('./tsg_outcome.csv', index_label='PassengerId')
