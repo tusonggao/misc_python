@@ -55,8 +55,7 @@ import tensorflow as tf
 FLAGS = None
 def main(_):
     # Import data
-    mnist = input_data.read_data_sets(FLAGS.data_dir, one_hot=True)
-    
+    mnist = input_data.read_data_sets(FLAGS.data_dir, one_hot=True)    
     
     # Create the model
     x = tf.placeholder(tf.float32, [None, 784])
