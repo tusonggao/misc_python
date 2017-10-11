@@ -108,7 +108,6 @@ if __name__=='__main__':
 #    print('time cost is ', end_time - start_time)    
 #    sys.exit(0)    
 
-
     X_train = train_data_frame.drop(['label'], axis=1)
     y_train = train_data_frame['label']
     X_test = test_data_frame
