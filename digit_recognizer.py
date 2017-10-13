@@ -77,7 +77,8 @@ if __name__=='__main__':
 #    X_train, X_test, y_train, y_test = train_test_split(
 #                                            train_data_frame[train_cols], 
 #                                            train_data_frame['SalePrice'], 
-#                                            random_state=42)            
+#                                            random_state=42)       
+
                                             
 #    best_ratio = 0
 #    best_score = -1000
