@@ -72,6 +72,7 @@ if __name__=='__main__':
 #    col_names = list(data_dummies.columns)
 #    train_cols = list(set(train_data_frame.columns)-
 #                      set(['PassengerId', 'Survived', 'Name', 'Ticket']))
+
     
 #    X_train, X_test, y_train, y_test = train_test_split(
 #                                            train_data_frame[train_cols], 
