@@ -92,8 +92,7 @@ if __name__=='__main__':
     tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
     
     
-    sys.exit(0)      
-    
+    sys.exit(0)         
 
     
     train_data_frame = pd.read_csv('./data/train.csv')
