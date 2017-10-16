@@ -139,7 +139,6 @@ if __name__=='__main__':
 
 
 
-
             
 #    lr = LinearRegression().fit(X_train, y_train)
                                             
