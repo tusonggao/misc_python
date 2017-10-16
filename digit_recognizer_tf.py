@@ -138,7 +138,6 @@ if __name__=='__main__':
 #                                            random_state=42)
 
 
-
             
 #    lr = LinearRegression().fit(X_train, y_train)
                                             
