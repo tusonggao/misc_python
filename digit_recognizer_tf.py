@@ -98,10 +98,8 @@ if __name__=='__main__':
     train_data_frame = pd.read_csv('./data/train.csv')
     test_data_frame = pd.read_csv('./data/test.csv')
     print('train_data_frame shape is ', train_data_frame.shape)
-    print('test_data_frame shape is ', test_data_frame.shape)
+    print('test_data_frame shape is ', test_data_frame.shape)  
     
-    
-
 
 #    end_time = time.time()    
 #    print('time cost is ', end_time - start_time)    
