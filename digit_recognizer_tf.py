@@ -101,8 +101,8 @@ if __name__=='__main__':
     print('train_data_frame shape is ', train_data_frame.shape)
     print('test_data_frame shape is ', test_data_frame.shape)
     
-#                         index=test_data_frame.index.values)
-#    outcome_data_frame.to_csv('./tsg_outcome.csv', index_label='PassengerId')
+    
+
 
 #    end_time = time.time()    
 #    print('time cost is ', end_time - start_time)    
