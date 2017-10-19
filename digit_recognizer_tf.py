@@ -117,8 +117,7 @@ if __name__=='__main__':
 
 
 #    features_data_frame = pd.get_dummies(features_data_frame)
-#    test_data_frame = pd.get_dummies(test_data_frame)
-#    adjust_test_dataframe(features_data_frame, train_data_frame)
+
     
 #    features_cols = list(set(train_data_frame.columns)-set(['Survived']))
 
