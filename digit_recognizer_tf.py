@@ -115,7 +115,6 @@ if __name__=='__main__':
 #    print('features_data_frame is ', list(features_data_frame['Fare'])[295:307])
 #    print('test_dataframe.shape is ', test_data_frame.shape)
 
-
 #    features_data_frame = pd.get_dummies(features_data_frame)
 
     
