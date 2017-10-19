@@ -102,7 +102,7 @@ if __name__=='__main__':
     
 
 #    end_time = time.time()    
-#    print('time cost is ', end_time - start_time)    
+ 
 #    sys.exit(0)    
 
     X_train = train_data_frame.drop(['label'], axis=1)
