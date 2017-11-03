@@ -79,7 +79,6 @@ if __name__=='__main__':
 #                                            train_data_frame['SalePrice'], 
 #                                            random_state=42)       
 
-
                                             
 #    best_ratio = 0
 #    best_score = -1000
@@ -110,7 +109,6 @@ if __name__=='__main__':
 #                               max_depth=4,
 #                               n_jobs=4).fit(
 #                               train_data_frame[train_cols],
-
 
 
     gbc = GradientBoostingClassifier(n_estimators=2000,
