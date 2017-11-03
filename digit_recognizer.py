@@ -253,7 +253,8 @@ if __name__=='__main__':
 #    print('length of test_data_frame ', len(test_data_frame))
 #    outcome = list(lr.predict(test_data_frame))
 #    print('length of outcome is ', len(outcome))
-    
+
+
 #######################################################################
     
 #    param_grid = {'kernel': ["rbf"],
@@ -272,7 +273,6 @@ if __name__=='__main__':
 #    print('svr grid_search.best_params_ is ', grid_search.best_params_)
 #    print('svr grid_search.best_score_ is ', grid_search.best_score_)
 #    print('best score is ', test_score)
-
 
 #######################################################################
 
