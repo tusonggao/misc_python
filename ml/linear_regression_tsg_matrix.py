@@ -12,6 +12,7 @@ class Linear_Regression_Classifier():
         self.n = X_train.shape[1]   # 训练样本feature个数
         
         self.w = np.random.rand(self.n, 1)  # parameter
+#        self.w = np.zeros(shape=(self.n, 1))  # parameter
         self.X_train = X_train
         self.y_train = y_train
         
@@ -46,11 +47,9 @@ def take_input_value():
     file_in = open('test_data_generated.txt')
     x_instances, y_list = [], []
     n, m = map(int, file_in.readline().split())
-    print('n m is ', n, m)
     for i in range(m):
         x_instance = []
         x_instance = list(map(float, file_in.readline().split()))
-        print('x_instance is ', x_instance)
         y_list.append(x_instance[-1])
         x_instance[-1] = 1.0
         x_instances.append(x_instance)
@@ -69,6 +68,8 @@ def take_input_value():
     
 if __name__ == '__main__':
     X_train, y_train, X_test = take_input_value() # 得到输入训练数据和测试数据，每一行为一个训练样本
+    print('X_train, y_train, X_test shape is ', X_train.shape, 
+          y_train.shape, X_test.shape)
     
     start_t = time.time()
     regr = Linear_Regression_Classifier()
@@ -78,6 +79,7 @@ if __name__ == '__main__':
     
     print('y_test is {} cost time: {} sec '.format(y_test, end_t-start_t))
     print('parameter is ', regr.w)
+    print('count is ', regr.running_loop_count)
 
 
 

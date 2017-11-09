@@ -2,15 +2,14 @@ import time
 
 #m = 10  # 训练集中包含instance 的个数
 #n = 10  # 每个instance的feature的个数
-
 #w_list = [0. for _ in range(n+1)]   # (n+1)个数值 最后一个数值为b
 
 alpha = 0.005     #  learning rate
 delta = 10**(-7)
+count = 1
 
 #x_instances = []   # m X n+1 矩阵   最后一列数值为1 对应 b
 #y = [] # m X 1 矩阵
-#
 #test_num = 0
 #x_instances_to_be_test = []
      
@@ -41,19 +40,18 @@ def update_coefficient():
     return step_max
   
 def main():
-    global delta
-    count = 1
+    global delta, count
     while True:
         count += 1
         step = update_coefficient()
         if step < delta:
             break
-#    print('count: {0} step: {1}'.format(count, step))
+#        print('count: {0} step: {1}'.format(count, step))
 
         
 def take_input_value():
-    file_in = open('in_data.txt')
-#    global m, n, x_instances, y, test_num, x_instances_to_be_test
+#    file_in = open('in_data.txt')
+    file_in = open('test_data_generated.txt')
     n, m = map(int, file_in.readline().split())
     x_instances, y = [], []
     for i in range(m):
@@ -90,6 +88,7 @@ if __name__ == '__main__':
     end_t = time.time()
     print('y_test is {} cost time: {} sec '.format(y_test, end_t-start_t))
     print('parameter is ', w_list)
+    print('count is ', count)
 
 
 
