@@ -1,20 +1,18 @@
-import numpy as np
-import pandas as pd
+import time
 
-m = 10  # 训练集中包含instance 的个数
-n = 10  # 每个instance的feature的个数
+#m = 10  # 训练集中包含instance 的个数
+#n = 10  # 每个instance的feature的个数
 
-w_list = [0. for _ in range(n+1)]   # (n+1)个数值 最后一个数值为b
-#w_list_new = [0. for _ in range(n)]  # (n+1)个数值 最后一个数值为b
+#w_list = [0. for _ in range(n+1)]   # (n+1)个数值 最后一个数值为b
 
 alpha = 0.005     #  learning rate
 delta = 10**(-7)
 
-x_instances = []   # m X n+1 矩阵   最后一列数值为1 对应 b
-y = [] # m X 1 矩阵
-
-test_num = 0
-x_instances_to_be_test = []
+#x_instances = []   # m X n+1 矩阵   最后一列数值为1 对应 b
+#y = [] # m X 1 矩阵
+#
+#test_num = 0
+#x_instances_to_be_test = []
      
 def compute_F_t(t):
     global w_list, b, x_instances, y
@@ -50,29 +48,28 @@ def main():
         step = update_coefficient()
         if step < delta:
             break
-    print('count: {0} step: {1}'.format(count, step))
+#    print('count: {0} step: {1}'.format(count, step))
 
         
 def take_input_value():
     file_in = open('in_data.txt')
-    global m, n, x_instances, y, test_num, x_instances_to_be_test
+#    global m, n, x_instances, y, test_num, x_instances_to_be_test
     n, m = map(int, file_in.readline().split())
-#    print('m n is ', m, n)
+    x_instances, y = [], []
     for i in range(m):
         x_instance = []
         x_instance = list(map(float, file_in.readline().split()))
         y.append(x_instance[-1])
         x_instance[-1] = 1.0
         x_instances.append(x_instance)
-    print('x_instances is ', x_instances)
-    print('y is ', y)
     test_num = int(file_in.readline())
-    print('test_num is ', test_num)
+    x_instances_to_be_test = []
     for i in range(test_num):
         x_instance = list(map(float, file_in.readline().split()))
         x_instance.append(1.0)
         x_instances_to_be_test.append(x_instance)
-    print('x_instances_to_be_test is ', x_instances_to_be_test)
+    w_list = [0. for _ in range(n+1)] 
+    return m, n, x_instances, y, test_num, x_instances_to_be_test, w_list
 
 def compute_test_data():
     global test_num, x_instances_to_be_test, w_list
@@ -82,13 +79,16 @@ def compute_test_data():
         for j in range(n+1):
             price_val += w_list[j]*x_instances_to_be_test[i][j]
         computed_prices.append(price_val)
-    print('computed_prices is ', computed_prices)
     return computed_prices
 
 if __name__ == '__main__':
-    take_input_value()
+    m, n, x_instances, y, test_num, x_instances_to_be_test, w_list = take_input_value()
+    
+    start_t = time.time()
     main()
-    compute_test_data()
+    y_test = compute_test_data()
+    end_t = time.time()
+    print('y_test is {} cost time: {} sec '.format(y_test, end_t-start_t))
 
 
 
