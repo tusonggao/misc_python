@@ -89,6 +89,7 @@ if __name__ == '__main__':
     y_test = compute_test_data()
     end_t = time.time()
     print('y_test is {} cost time: {} sec '.format(y_test, end_t-start_t))
+    print('parameter is ', w_list)
 
 
 
