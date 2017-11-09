@@ -2,6 +2,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import time
 
+import xgboost
+
+
 points  = np.array([[2, 1],
                     [3, 1],
                     [4, 1],
@@ -48,3 +51,20 @@ while True:
         break
 end_t = time.time()
 print('cost time is ', end_t-begin_t)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

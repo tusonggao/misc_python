@@ -26,39 +26,69 @@ from sklearn import svm
 import mglearn
 import sklearn
 
+import keras
+
 def convert(cases, divisor):
     cases_new = []
     for case in cases:
         cases_new.append([case[0]/divisor])
     return cases_new
 
+def gen_func():
+    num = 10
+    ind = np.array(range(len([3, 4, 5, 6, 7])))
+    print('ind is ', ind)
+    np.random.shuffle(ind)
+    print('ind is ', ind)
+    
+    print('type of ind is ', type(ind))
+    for i in range(10):
+        yield i**2-1
     
 if __name__=='__main__':
-    cancer = load_breast_cancer()
-    print('cancer is ', cancer.data.shape)
-    print('cancer is ', len(cancer.data))
+    print('hello world')
+#    assert 2==3, '2 must equal to 3'
     
-    rng = np.random.RandomState(42)
-    noise = rng.normal(size=(len(cancer.data), 50))
-    print('noise.shape is ', noise.shape)
+    for i in gen_func():
+        print('i is ', i)
+        
+    arr = np.array([1, 2, 3])
+    ttt_1 = (arr.cumsum()/np.sum(arr)).astype(int)
+    ttt_2 = (arr.cumsum()/np.sum(arr)).astype(float)
+    print('ttt_1 {} ttt_2 {} '.format(ttt_1, ttt_2))
     
-    X_w_noise = np.hstack([cancer.data, noise])
-    print('X_w_noise is ', X_w_noise.shape)
+    data = np.array([[1, 2, 3, 4],
+                     [2, 4, 6, 8],
+                     [3, 6, 9, 12]])
+    data_1 = data[[2, 0, 1]]
+    print(data_1)
     
-    X_train, X_test, y_train, y_test = train_test_split(
-            X_w_noise, cancer.target, random_state=0, test_size=.5)
-    select = SelectPercentile(percentile=50)
-    select.fit(X_train, y_train)
-    X_train_selected = select.transform(X_train)
     
-    print(X_train.shape, y_train.shape)
-    print(X_train_selected.shape)
-    
-    mask = select.get_support()
-    print(mask.shape)
-    print(mask.reshape(1, -1).shape)
-    
-    plt.matshow(mask.reshape(1, -1), cmap='gray_r')
+#    cancer = load_breast_cancer()
+#    print('cancer is ', cancer.data.shape)
+#    print('cancer is ', len(cancer.data))
+#    
+#    rng = np.random.RandomState(42)
+#    noise = rng.normal(size=(len(cancer.data), 50))
+#    print('noise.shape is ', noise.shape)
+#    
+#    X_w_noise = np.hstack([cancer.data, noise])
+#    print('X_w_noise is ', X_w_noise.shape)
+#    
+#    X_train, X_test, y_train, y_test = train_test_split(
+#            X_w_noise, cancer.target, random_state=0, test_size=.5)
+#    select = SelectPercentile(percentile=50)
+#    select.fit(X_train, y_train)
+#    X_train_selected = select.transform(X_train)
+#    
+#    print(X_train.shape, y_train.shape)
+#    print(X_train_selected.shape)
+#    
+#    mask = select.get_support()
+#    print(mask.shape)
+#    print(mask.reshape(1, -1).shape)
+#    
+#    plt.matshow(mask.reshape(1, -1), cmap='gray_r')
     
     
     

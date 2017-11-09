@@ -21,7 +21,6 @@ from sklearn.linear_model import Lasso
 
 from sklearn.feature_selection import SelectPercentile
 
-
 from sklearn import svm
 import mglearn
 import sklearn
@@ -30,6 +29,26 @@ from keras.datasets import mnist
 from keras.models import Sequential
 from keras.layers import Dense
 from keras.utils import np_utils
+
+def to_categorical(y, num_classes=None):
+    y = np.array(y, dtype='int').ravel()
+    if not num_classes:
+        num_classes = np.max(y) + 1
+    n = y.shape[0]
+    categorical = np.zeros((n, num_classes))
+    categorical[np.arange(n), y] = 1
+    return categorical
+    
+def one_hot_encoding(y, num_classes=None):
+    if isinstance(y, list):
+        y = np.array(y)
+    if not num_classes:
+        num_classes = np.max(y) + 1
+    n = y.shape[0]
+    categorial = np.zeros((n, num_classes))
+    categorial[np.arange(n), y] = 1
+    return categorial
+    
 
 batch_size = 128
 nb_classes = 10
@@ -40,13 +59,25 @@ img_size = 28*28
 X_train = X_train.reshape(y_train.shape[0], img_size).astype('float32')/255
 X_test = X_test.reshape(y_test.shape[0], img_size).astype('float32')/255
 
-print(X_train.shape, X_test)
+print(X_train.shape, X_test.shape)
 
+Y_train = np_utils.to_categorical(y_train, nb_classes)
+Y_test = np_utils.to_categorical(y_test, nb_classes)
+
+print(Y_train)
+print(Y_test)
     
 if __name__=='__main__':
-    print('hello world')
+    input_string = input()
+    print(input_string)
+#    print('hello world')
+#    arrr = np.array([3, 4, 5, 6, ])
+#    print(one_hot_encoding(arrr))
+    
 #    assert 2==3, '2 must equal to 3'
     
+
+
     
     
     

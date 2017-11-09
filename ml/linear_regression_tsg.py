@@ -6,7 +6,9 @@ n = 10  # 每个instance的feature的个数
 
 w_list = [0. for _ in range(n+1)]   # (n+1)个数值 最后一个数值为b
 #w_list_new = [0. for _ in range(n)]  # (n+1)个数值 最后一个数值为b
-learning_rate = 0.01
+
+alpha = 0.005     #  learning rate
+delta = 10**(-7)
 
 x_instances = []   # m X n+1 矩阵   最后一列数值为1 对应 b
 y = [] # m X 1 矩阵
@@ -15,14 +17,14 @@ test_num = 0
 x_instances_to_be_test = []
      
 def compute_F_t(t):
-    global w_list, b, learning_rate, x_matrix, y
+    global w_list, b, x_instances, y
     sum_val = -y[t]
     for i in range(n+1):
         sum_val += w_list[i]*x_instances[t][i]
     return sum_val
 
 def update_coefficient():
-    global m, n, w_list, b, learning_rate, x_instances, y
+    global m, n, w_list, b, alpha, x_instances, y
     
     F_list = []
     for i in range(m):
@@ -34,22 +36,21 @@ def update_coefficient():
         for j in range(m):
             derivative +=  F_list[j] * x_instances[j][i]
         derivative *= 2./m
-        step = learning_rate*derivative
+        step = alpha*derivative
         w_list[i] -= step
         if step_max < abs(step):
             step_max = abs(step)    
     return step_max
   
 def main():
-    global m, n
-    min_step = 10**(-7)
+    global delta
     count = 1
     while True:
         count += 1
         step = update_coefficient()
-        if step < min_step:
+        if step < delta:
             break
-        print('count: {0} step: {1}'.format(count, step))
+    print('count: {0} step: {1}'.format(count, step))
 
         
 def take_input_value():
@@ -88,9 +89,6 @@ if __name__ == '__main__':
     take_input_value()
     main()
     compute_test_data()
-#    ll = list((2, 3, 4))
-#    print(ll)
-#    main()  
 
 
 
