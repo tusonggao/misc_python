@@ -8,8 +8,7 @@ data = load_iris()
 y = data.target
 X = data.data
 
-#y = list(train_y)
-#reduced_X = pca.fit_transform(train_X)
+#----------------2D plotting-------------------
 
 pca = PCA(n_components=2)
 reduced_X = pca.fit_transform(X)
@@ -34,11 +33,7 @@ plt.scatter(green_x, green_y, c='g', marker='.')
 plt.show()
 
 
-##-----------------------------------------------------
-
-#y = list(train_y)
-#pca = PCA(n_components=3)
-#reduced_X = pca.fit_transform(train_X)
+#--------------3D plotting--------------------------
 
 pca = PCA(n_components=3)
 reduced_X = pca.fit_transform(X)
