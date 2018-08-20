@@ -30,19 +30,33 @@ def prev_position(i, j):
     return divmod(num, 9)
 
 def check_ok(i, j, input_matrix):
-    counter = Counter(input_matrix[i])
+    print('in checkok i, j:', i, j, 'current value is ', input_matrix[i][j])
+    ll1 = input_matrix[i]
+    print('ll1 is ', ll1)
+    counter = Counter(ll1)
     for val, cnt in counter.items():
         if cnt>=2 and val!='X':
+            print('check_ok is ', False)
             return False
-    counter = Counter([input_matrix[x][j] for x in range(9)])
+    
+    ll2 = [input_matrix[x][j] for x in range(9)]
+    print('ll2 is ', ll2)
+    counter = Counter(ll2)
     for val, cnt in counter.items():
         if cnt>=2 and val!='X':
+            print('check_ok is ', False)
             return False
-    counter = Counter([input_matrix[x][y] for x in range(i//3*3, i//3*3 + 3) 
-                                          for y in range(j//3*3, j//3*3 + 3)])
+        
+    ll3 = [input_matrix[x][y] for x in range(i//3*3, i//3*3 + 3) 
+                              for y in range(j//3*3, j//3*3 + 3)]
+    counter = Counter(ll3)
+    print('ll3 is ', ll3)
     for val, cnt in counter.items():
         if cnt>=2 and val!='X':
+            print('check_ok is ', False)
             return False
+    
+    print('check_ok is ', True)
     return True
 
 
@@ -53,14 +67,18 @@ def solve(i, j, input_matrix):
             return
     
     for val in range(1, 10):
-        input_matrix[i][j] = val
+        input_matrix[i][j] = str(val)
         if check_ok(i, j, input_matrix):
+            print_outcome(input_matrix)
+#            name = input("please input：");
             if i==8 and j==8:
+                print('ok, found one')
                 print_outcome(input_matrix)
             else:
                 i, j = next_position(i, j)
                 solve(i, j, input_matrix)
-        input_matrix[i][j] = 'X'
+        if input_matrix_original[i][j]=='X':
+            input_matrix[i][j] = 'X'
             
 
 file_name = 'C:/github_base/misc_python/sudoku_solver/input.txt'
@@ -72,6 +90,5 @@ input_matrix_new = input_matrix_original.copy()
 #print('input_matrix_new is ', input_matrix_new)
 
 solve(0, 0, input_matrix_new)
-        
-        
+       
 			    
