@@ -13,17 +13,13 @@ def read_input(file_name):
             input_matrix.append(list_n)
     return input_matrix
 	
+def print_outcome(input_matrix):
+    for i in range(9):
+        print(' '.join([str(v) for v in input_matrix[i]]))
+    print('\n---------------------------\n')
 
-file_name = 'C:/github_base/misc_python/sudoku_solver/input.txt'
-input_matrix = read_input(file_name)
-print('input_matrix is ', input_matrix)
-
-input_matrix_new = input_matrix.copy()
-print('input_matrix_new is ', input_matrix_new)
-
-#solve(0, 0, input_matrix)
-
-
+def valid_position(i, j):
+    return 0 <= i <= 8 and 0 <= j <=8
 
 def next_position(i, j):
     num = i*9 + j + 1
@@ -38,38 +34,44 @@ def check_ok(i, j, input_matrix):
     for val, cnt in counter.items():
         if cnt>=2 and val!='X':
             return False
-    
     counter = Counter([input_matrix[x][j] for x in range(9)])
     for val, cnt in counter.items():
         if cnt>=2 and val!='X':
             return False
-    
     counter = Counter([input_matrix[x][y] for x in range(i//3*3, i//3*3 + 3) 
                                           for y in range(j//3*3, j//3*3 + 3)])
     for val, cnt in counter.items():
         if cnt>=2 and val!='X':
             return False
-    
     return True
-    
-    
+
 
 def solve(i, j, input_matrix):
-    if FOUND==True:
-        return
+    while input_matrix_original[i][j]!='X':
+        i, j = next_position(i, j)
+        if valid_position(i, j)==False: 
+            return
     
-    if input_matrix_original[i][j]=='X':
-        for val in range(1, 10)
-    right_placement = check_ok(i, j, input_matrix)
-    if i==8 and j==8 and right_placement:
-        print('found one solution', input_matrix)
-        FOUND = True
-    elif right_placement:
-        solve(i, j, input_matrix)
-        
-for pos in range(9*9):
-    i, j = divmod(pos, 9)
-    print(i, j, input_matrix[i][j])
+    for val in range(1, 10):
+        input_matrix[i][j] = val
+        if check_ok(i, j, input_matrix):
+            if i==8 and j==8:
+                print_outcome(input_matrix)
+            else:
+                i, j = next_position(i, j)
+                solve(i, j, input_matrix)
+        input_matrix[i][j] = 'X'
+            
+
+file_name = 'C:/github_base/misc_python/sudoku_solver/input.txt'
+input_matrix_original = read_input(file_name)
+print('input_matrix is ', input_matrix_original)
+print_outcome(input_matrix_original)
+
+input_matrix_new = input_matrix_original.copy()
+#print('input_matrix_new is ', input_matrix_new)
+
+solve(0, 0, input_matrix_new)
         
         
 			    
