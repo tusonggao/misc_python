@@ -1,3 +1,7 @@
+from collections import Counter
+
+FOUND = False
+
 def read_input(file_name):
     input_matrix = []
     with open(file_name) as file:
@@ -19,7 +23,7 @@ print('input_matrix_new is ', input_matrix_new)
 
 #solve(0, 0, input_matrix)
 
-FOUND = False
+
 
 def next_position(i, j):
     num = i*9 + j + 1
@@ -29,20 +33,43 @@ def prev_position(i, j):
     num = i*9 + j - 1
     return divmod(num, 9)
 
+def check_ok(i, j, input_matrix):
+    counter = Counter(input_matrix[i])
+    for val, cnt in counter.items():
+        if cnt>=2 and val!='X':
+            return False
+    
+    counter = Counter([input_matrix[x][j] for x in range(9)])
+    for val, cnt in counter.items():
+        if cnt>=2 and val!='X':
+            return False
+    
+    counter = Counter([input_matrix[x][y] for x in range(i//3*3, i//3*3 + 3) 
+                                          for y in range(j//3*3, j//3*3 + 3)])
+    for val, cnt in counter.items():
+        if cnt>=2 and val!='X':
+            return False
+    
+    return True
+    
+    
 
 def solve(i, j, input_matrix):
-    if Found:
+    if FOUND==True:
         return
-    right_placement = check(i, j, input_matrix)
+    
+    if input_matrix_original[i][j]=='X':
+        for val in range(1, 10)
+    right_placement = check_ok(i, j, input_matrix)
     if i==8 and j==8 and right_placement:
         print('found one solution', input_matrix)
-        Found = True
+        FOUND = True
     elif right_placement:
         solve(i, j, input_matrix)
         
-#for pos in range(9*9):
-#    i, j = divmod(pos, 9)
-#    print(i, j, input_matrix[i][j])
+for pos in range(9*9):
+    i, j = divmod(pos, 9)
+    print(i, j, input_matrix[i][j])
         
         
 			    
