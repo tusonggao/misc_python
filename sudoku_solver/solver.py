@@ -66,9 +66,10 @@ def solve(i, j, input_matrix):
         if valid_position(i, j)==False: 
             return
     
+    pos_x, pos_y = i, j
     for val in range(1, 10):
-        input_matrix[i][j] = str(val)
-        if check_ok(i, j, input_matrix):
+        input_matrix[pos_x][pos_y] = str(val)
+        if check_ok(pos_x, pos_y, input_matrix):
             print_outcome(input_matrix)
 #            name = input("please input：");
             if i==8 and j==8:
@@ -77,8 +78,8 @@ def solve(i, j, input_matrix):
             else:
                 i, j = next_position(i, j)
                 solve(i, j, input_matrix)
-        if input_matrix_original[i][j]=='X':
-            input_matrix[i][j] = 'X'
+        if input_matrix_original[pos_x][pos_y]=='X':
+            input_matrix[pos_x][pos_y] = 'X'
             
 
 file_name = 'C:/github_base/misc_python/sudoku_solver/input.txt'
