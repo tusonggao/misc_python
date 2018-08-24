@@ -32,8 +32,6 @@ print_outcome(input_matrix)
 X_NUM = list(itertools.chain(*input_matrix_original)).count('X')
 print('x_num is ', X_NUM)
 
-def solution_found(input_matrix):
-    sss = set()
 
 def valid_position(i, j):
     return 0 <= i <= 8 and 0 <= j <=8
@@ -79,7 +77,8 @@ def check_ok(i, j, input_matrix):
 
 
 def solve(pos_x, pos_y, input_matrix):
-    print('get here1 pos_x pos_y is ', pos_x, pos_y)
+    if pos_y>=7:
+        print('get here1 pos_x pos_y is ', pos_x, pos_y)
     
     global FOUND, input_matrix_original, X_NUM
     
@@ -102,12 +101,13 @@ def solve(pos_x, pos_y, input_matrix):
 #    print('get here3 pos_x pos_y is ', pos_x, pos_y)
     
     next_x, next_y = next_position(pos_x, pos_x)
-    X_NUM -= 1
+    
     
 #    print('next_x next_y is ', next_x, next_y)
     for val in range(1, 10):
         input_matrix[pos_x][pos_y] = str(val)
         if check_ok(pos_x, pos_y, input_matrix):
+            X_NUM -= 1
             print('check ok:', pos_x, pos_y, input_matrix[pos_x][pos_y])
 #            print_outcome(input_matrix)
 #            name = input("please input：");
@@ -118,9 +118,10 @@ def solve(pos_x, pos_y, input_matrix):
                 print_outcome(input_matrix)
                 FOUND = True
                 return
-#    if input_matrix_original[pos_x][pos_y]=='X':
-    input_matrix[pos_x][pos_y] = 'X'
-    X_NUM += 1
+            X_NUM += 1
+    if input_matrix_original[pos_x][pos_y]=='X':
+        input_matrix[pos_x][pos_y] = 'X'
+#    X_NUM += 1
 
 #pos_x, pos_y = 0, 0
 #pos_x, pos_y = next_position(pos_x, pos_y)
