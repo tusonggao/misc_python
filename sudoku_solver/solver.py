@@ -27,10 +27,6 @@ print_outcome(input_matrix_original)
 input_matrix = copy.deepcopy(input_matrix_original)
 print_outcome(input_matrix)
 
-#input_matrix[3][3] = 100
-#print_outcome(input_matrix_original)
-
-
 def valid_position(i, j):
     return 0 <= i <= 8 and 0 <= j <=8
 
@@ -74,24 +70,21 @@ def check_ok(i, j, input_matrix):
     return True
 
 
-def solve(i, j, input_matrix):
+def solve(pos_x, pos_y, input_matrix):
     global FOUND, input_matrix_original
     if FOUND==True:
-        print('already found one, i will exit')
+#        print('already found one, i will exit')
         return
     
-    if valid_position(i, j)==False: 
+    if valid_position(pos_x, pos_y)==False: 
         return
     
-#    print('in solve input_matrix_original is ', input_matrix_original)
-#    print('in solve input_matrix is ', input_matrix)
-    while input_matrix_original[i][j]!='X':
-#        print('yes checked here ', i, j)
-        i, j = next_position(i, j)
-        if valid_position(i, j)==False: 
+    while input_matrix_original[pos_x][pos_y]!='X':
+        pos_x, pox_y = next_position(pos_x, pos_y)
+        if valid_position(pos_x, pos_y)==False: 
             return
     
-    pos_x, pos_y = i, j
+    next_x, next_y = next_position(pos_x, pos_x)
     for val in range(1, 10):
         input_matrix[pos_x][pos_y] = str(val)
         if check_ok(pos_x, pos_y, input_matrix):
@@ -101,16 +94,13 @@ def solve(i, j, input_matrix):
                 print('ok, found one')
                 print_outcome(input_matrix)
                 FOUND = True
+                return
             else:
-                i, j = next_position(i, j)
-                solve(i, j, input_matrix)
+                solve(next_x, next_y, input_matrix)
         
-        if input_matrix_original[pos_x][pos_y]=='X':
-#            print('yes got here', pos_x, pos_y)
-            input_matrix[pos_x][pos_y] = 'X'
+    if input_matrix_original[pos_x][pos_y]=='X':
+        input_matrix[pos_x][pos_y] = 'X'
             
-
-
 
 solve(0, 0, input_matrix)
        
