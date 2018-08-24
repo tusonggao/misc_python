@@ -71,36 +71,49 @@ def check_ok(i, j, input_matrix):
 
 
 def solve(pos_x, pos_y, input_matrix):
+#    print('get here1 pos_x pos_y is ', pos_x, pos_y)
+    
     global FOUND, input_matrix_original
+    
     if FOUND==True:
 #        print('already found one, i will exit')
         return
-    
-    if valid_position(pos_x, pos_y)==False: 
+    if valid_position(pos_x, pos_y)==False:
+#        print('not valid, i will exit')
         return
     
+#    print('get here2 pos_x pos_y is ', pos_x, pos_y)
+    
     while input_matrix_original[pos_x][pos_y]!='X':
-        pos_x, pox_y = next_position(pos_x, pos_y)
-        if valid_position(pos_x, pos_y)==False: 
+        pos_x, pos_y = next_position(pos_x, pos_y)
+#        print('get new pos_x pos_y is ', pos_x, pos_y)
+        if valid_position(pos_x, pos_y)==False:
+#            print('new position not valid, i will exit')
             return
     
+#    print('get here3 pos_x pos_y is ', pos_x, pos_y)
+    
     next_x, next_y = next_position(pos_x, pos_x)
+#    print('next_x next_y is ', next_x, next_y)
     for val in range(1, 10):
         input_matrix[pos_x][pos_y] = str(val)
         if check_ok(pos_x, pos_y, input_matrix):
-#            print_outcome(input_matrix)
+            print('check ok:', pos_x, pos_y, input_matrix[pos_x][pos_y])
+            print_outcome(input_matrix)
 #            name = input("please input：");
-            if pos_x==8 and pos_y==8:
+            if not (pos_x==8 and pos_y==8):
+                solve(next_x, next_y, input_matrix)
+            else:
                 print('ok, found one')
                 print_outcome(input_matrix)
                 FOUND = True
                 return
-            else:
-                solve(next_x, next_y, input_matrix)
-        
     if input_matrix_original[pos_x][pos_y]=='X':
         input_matrix[pos_x][pos_y] = 'X'
-            
+
+#pos_x, pos_y = 0, 0
+#pos_x, pos_y = next_position(pos_x, pos_y)
+#print(pos_x, pos_y)
 
 solve(0, 0, input_matrix)
        
