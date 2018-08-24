@@ -61,6 +61,10 @@ def check_ok(i, j, input_matrix):
 
 
 def solve(i, j, input_matrix):
+    global FOUND
+    if FOUND:
+        return
+    
     while input_matrix_original[i][j]!='X':
         i, j = next_position(i, j)
         if valid_position(i, j)==False: 
@@ -75,6 +79,7 @@ def solve(i, j, input_matrix):
             if i==8 and j==8:
                 print('ok, found one')
                 print_outcome(input_matrix)
+                FOUND = True
             else:
                 i, j = next_position(i, j)
                 solve(i, j, input_matrix)
@@ -82,7 +87,7 @@ def solve(i, j, input_matrix):
             input_matrix[pos_x][pos_y] = 'X'
             
 
-file_name = 'C:/github_base/misc_python/sudoku_solver/input.txt'
+file_name = 'C:/github_base/misc_python/sudoku_solver/input2.txt'
 input_matrix_original = read_input(file_name)
 print('input_matrix is ', input_matrix_original)
 print_outcome(input_matrix_original)
@@ -90,6 +95,6 @@ print_outcome(input_matrix_original)
 input_matrix_new = input_matrix_original.copy()
 #print('input_matrix_new is ', input_matrix_new)
 
-solve(0, 0, input_matrix_new)
+#solve(0, 0, input_matrix_new)
        
 			    
